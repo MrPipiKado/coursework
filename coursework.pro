@@ -17,10 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    student.cpp \
+    studentslist.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    student.h \
+    studentslist.h
 
 FORMS += \
     mainwindow.ui
@@ -29,3 +33,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Icons.qrc

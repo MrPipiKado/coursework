@@ -1,0 +1,60 @@
+<RCC>
+    <qresource prefix="/Icon">
+        <file>Logo.png</file>
+        <file>user (2).png</file>
+        <file>user.png</file>
+        <file>user (1).png</file>
+        <file>group.png</file>
+        <file>add-file.png</file>
+        <file>angle-button.png</file>
+        <file>text-button.png</file>
+        <file>remove-file.png</file>
+        <file>strikethrough-button.png</file>
+        <file>upload-button.png</file>
+        <file>look-button.png</file>
+        <file>tracking-text-button.png</file>
+        <file>text-paragraph.png</file>
+        <file>pencil-button.png</file>
+        <file>edit-button-1.png</file>
+        <file>copy-text.png</file>
+        <file>email-button.png</file>
+        <file>save-files.png</file>
+        <file>settings-button.png</file>
+        <file>paste-text.png</file>
+        <file>change-typographic-button.png</file>
+        <file>underline-button.png</file>
+        <file>bold-button.png</file>
+        <file>cut-button.png</file>
+        <file>zoom-button.png</file>
+        <file>cutting-button.png</file>
+        <file>indentation-button.png</file>
+        <file>notepad-with-text-lines.png</file>
+        <file>doubts-button.png</file>
+        <file>kerning-button.png</file>
+        <file>right-alignment-button.png</file>
+        <file>link-text-button.png</file>
+        <file>left-alignment-button.png</file>
+        <file>vertical-scale.png</file>
+        <file>printing-archive.png</file>
+        <file>horizontal-scale-button.png</file>
+        <file>edit-button.png</file>
+        <file>typographic-button.png</file>
+        <file>cut-button-1.png</file>
+        <file>store-files.png</file>
+        <file>text-color.png</file>
+        <file>move-arrows-button.png</file>
+        <file>dropper-button.png</file>
+        <file>cancel-button.png</file>
+        <file>link-button.png</file>
+        <file>text-size-button.png</file>
+        <file>download-button.png</file>
+        <file>interline-button.png</file>
+        <file>center-alignment-button.png</file>
+        <file>expand-button.png</file>
+        <file>attach-button.png</file>
+        <file>favorite-button.png</file>
+        <file>italic-button.png</file>
+        <file>spacing-button.png</file>
+        <file>go-back-button.png</file>
+    </qresource>
+</RCC>
