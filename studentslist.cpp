@@ -22,14 +22,16 @@ QFile & operator>>(QFile &file, StudentsList &list)
             {
                 if(!c.isLetter())
                 {
-                    //TODO exeption Incorrect surname in line
-                    //return;
+                    //Exeption Incorrect surname in line
+                    file.close();
+                    throw bad_input("Surname", str, line);
                 }
             }
             if(!str[0].isUpper())
             {
-                //TODO exeption Incorrect surname in line
-                //return;
+                //Exeption Incorrect surname in line
+                file.close();
+                throw bad_input("Surname", str, line);
             }
 
             //Read name
@@ -38,50 +40,62 @@ QFile & operator>>(QFile &file, StudentsList &list)
             {
                 if(!c.isLetter())
                 {
-                    //TODO exeption Incorrect name in line
-                    //return;
+                    //Exeption Incorrect name in line
+                    file.close();
+                    throw bad_input("Name", str, line);
                 }
             }
             if(!str[0].isUpper())
             {
-                //TODO exeption Incorrect surname in line
-                //return;
+                //Exeption Incorrect name in line
+                file.close();
+                throw bad_input("Name", str, line);
             }
 
             //Read Group
             input>>str;
-            //TODO case or if for group
+            if(str!="PZ21" || str!="PZ22" || str!="PZ23"
+                    || str!="PZ24" || str!="PZ25" || str!="PZ26")
+            {
+                //Exeption Incorrect group in line
+                file.close();
+                throw bad_input("Group", str, line);
+            }
 
             //Read physics mark
             input>>num;
             if(num>5||num<0)
             {
-                //TODO exeption physics mark
-                //return;
+                //Exeption physics mark
+                file.close();
+                throw bad_input("Physics", QString::number(num), line);
             }
 
             //Read math mark
             input>>num;
             if(num>5||num<0)
             {
-                //TODO exeption math mark
-                //return;
+                //Exeption math mark
+                file.close();
+                throw bad_input("Math", QString::number(num), line);
             }
 
             //Read foreign language mark
             input>>num;
             if(num>5||num<0)
             {
-                //TODO exeption foreign language mark
-                //return;
+                //Exeption language mark
+                file.close();
+                throw bad_input("Language", QString::number(num), line);
             }
 
             //Read ukr language mark
             input>>num;
             if(num>5||num<0)
             {
-                //TODO exeption ukr language mark
-                //return;
+                //Exeption ukr language mark
+                file.close();
+                throw bad_input("Ukr Language", QString::number(num), line);
             }
 
             ++line;
@@ -102,7 +116,7 @@ QFile & operator>>(QFile &file, StudentsList &list)
     }
     else
     {
-        //TODO can not open file
+        throw bad_file("Can not open");
     }
     return file;
 }
@@ -146,13 +160,20 @@ QFile & operator<<(QFile &file, StudentsList &list)
         }
         else
         {
-            //TODO exception file is not empty
+            file.close();
+            throw bad_file("File is not empty");
         }
     }
     else
     {
-        //TODO exception can not open
+        throw bad_file("Can not open");
     }
 
     return file;
+}
+
+void StudentsList::sort()
+{
+
+    return;
 }
