@@ -29,6 +29,17 @@ Student::Student(QString surname,
 
 }
 
+Student::Student(const Student& copy)
+{
+    this->surname = copy.surname;
+    this->name = copy.name;
+    this->group = copy.group;
+    this->math = copy.math;
+    this->physics = copy.physics;
+    this->foreign_language = copy.foreign_language;
+    this->ukr_language = copy.ukr_language;
+}
+
 void Student::setSurname(QString surname)
 {
     this->surname = surname;
@@ -109,10 +120,12 @@ double Student::getAvgMark()
             / 4.0;
 }
 
-QTextStream & operator>>(QTextStream & input, Student student)
+bool operator>>(QTextStream & input, Student &student)
 {
     QString tmp;
-    input>>student.surname;
+    input>>tmp;
+    if(tmp.isEmpty())return false;
+    student.surname = tmp;
     input>>student.name;
     input>>tmp;
     if(tmp == "PZ21")
@@ -132,5 +145,5 @@ QTextStream & operator>>(QTextStream & input, Student student)
     input>>student.foreign_language;
     input>>student.ukr_language;
 
-    return input;
+    return true;
 }

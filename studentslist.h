@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <exception>
 #include <string>
+#include <QTableWidget>
 
 class bad_input: public std::exception
 {
@@ -45,26 +46,37 @@ private:
     QString type;
 };
 
+typedef struct rank
+{
+    double mark;
+    GROUPS group;
+} RANK;
 
 class StudentsList
 {
 public:
     StudentsList();
+    StudentsList(const StudentsList &new_list);
+    StudentsList(std::vector<Student> &list);
 
     friend QFile & operator>>(QFile &file, StudentsList &list);
     friend QFile & operator<<(QFile &file, StudentsList &list);
+    friend void operator<<(QTableWidget * table, StudentsList &list);
+    std::vector<Student>& getList();
+    void setList(std::vector<Student> &list);
+    StudentsList getLoosers();
+    void getGroupRanks(RANK(*) [4][6]);
 
     void sort();
+    void add(Student student);
+    void clear();
 
 private:
+    void calculateGroupRanks();
+
     std::vector<Student> list;
 
-    float math_avg;
-    float physics_avg;
-    float foreign_language_avg;
-    float ukr_language_avg;
-    float group_rank;
-
+    RANK group_ranks[4][6];
 };
 
 #endif // STUDENTSLIST_H

@@ -16,18 +16,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addstudent.cpp \
+    groupranks.cpp \
     main.cpp \
     mainwindow.cpp \
+    outputtable.cpp \
     student.cpp \
     studentslist.cpp
 
 HEADERS += \
+    addstudent.h \
+    globals.h \
+    groupranks.h \
     mainwindow.h \
+    outputtable.h \
     student.h \
     studentslist.h
 
 FORMS += \
-    mainwindow.ui
+    addstudent.ui \
+    groupranks.ui \
+    mainwindow.ui \
+    outputtable.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

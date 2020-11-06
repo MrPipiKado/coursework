@@ -17,6 +17,7 @@ public:
             unsigned short physics,
             unsigned short foreign_language,
             unsigned short ukr_language);
+    Student(const Student& copy);
 
     void setSurname(QString surname);
     QString getSurname();
@@ -35,7 +36,7 @@ public:
 
     double getAvgMark();
 
-    friend QTextStream & operator>>(QTextStream & input, Student student);
+    friend bool operator>>(QTextStream & input, Student & student);
 
 private:
     QString surname;
