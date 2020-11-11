@@ -273,6 +273,282 @@ void StudentsList::getGroupRanks(RANK(* out)[4][6] )
             (*out)[i][j] = group_ranks[i][j];
 }
 
+StudentsList StudentsList::getSameNames()
+{
+    std::vector<Student> output;
+    for(int i = 0; i<list.size(); ++i)
+        for(int j = i+1; j<list.size(); ++j)
+        {
+            if(list[i].getSurname()==list[j].getSurname())
+            {
+                output.push_back(list[i]);
+                output.push_back(list[j]);
+            }
+        }
+    StudentsList out(output);
+    return out;
+}
+
+StudentsList StudentsList::getSameNamesInGroup()
+{
+    std::vector<Student> output;
+    for(int i = 0; i<list.size(); ++i)
+        for(int j = i+1; j<list.size(); ++j)
+        {
+            if(list[i].getSurname()==list[j].getSurname()
+                    && list[i].getGroup()==list[j].getGroup())
+            {
+                output.push_back(list[i]);
+                output.push_back(list[j]);
+            }
+        }
+    StudentsList out(output);
+    return out;
+}
+
+StudentsList StudentsList::getTwoSpecific(short flag1, short flag2,
+                                          unsigned short mark1, unsigned short mark2)
+{
+    std::vector<Student> out;
+    if(flag1==0&&flag2==1)
+    {
+        for(auto st : list)
+        {
+            if((st.getMath()==mark1 || st.getMath()==mark2)
+                    && (st.getPhysics()==mark1 || st.getPhysics()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    if(flag1==0&&flag2==2)
+    {
+        for(auto st : list)
+        {
+            if((st.getMath()==mark1 || st.getMath()==mark2)
+                    && (st.getUkrLanguage()==mark1 || st.getUkrLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    if(flag1==0&&flag2==3)
+    {
+        for(auto st : list)
+        {
+            if((st.getMath()==mark1 || st.getMath()==mark2)
+                    && (st.getForeignLanguage()==mark1 || st.getForeignLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    if(flag1==1&&flag2==2)
+    {
+        for(auto st : list)
+        {
+            if((st.getPhysics()==mark1 || st.getPhysics()==mark2)
+                    && (st.getUkrLanguage()==mark1 || st.getUkrLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    if(flag1==1&&flag2==3)
+    {
+        for(auto st : list)
+        {
+            if((st.getPhysics()==mark1 || st.getPhysics()==mark2)
+                    && (st.getForeignLanguage()==mark1 || st.getForeignLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    if(flag1==2&&flag2==3)
+    {
+        for(auto st : list)
+        {
+            if((st.getUkrLanguage()==mark1 || st.getUkrLanguage()==mark2)
+                    && (st.getForeignLanguage()==mark1 || st.getForeignLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+}
+
+StudentsList StudentsList::getThreeSpecific(short flag1, short flag2, short flag3,
+                              unsigned short mark1, unsigned short mark2)
+{
+    std::vector<Student> out;
+    if(flag1==0&&flag2==1&&flag3==2)
+    {
+        for(auto st : list)
+        {
+            if((st.getMath()==mark1||st.getMath()==mark2)
+                    &&(st.getPhysics()==mark1||st.getPhysics()==mark2)
+                    &&(st.getUkrLanguage()==mark1||st.getUkrLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    else
+    if(flag1==0&&flag2==1&&flag3==3)
+    {
+        for(auto st : list)
+        {
+            if((st.getMath()==mark1||st.getMath()==mark2)
+                    &&(st.getPhysics()==mark1||st.getPhysics()==mark2)
+                    &&(st.getForeignLanguage()==mark1||st.getForeignLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    else
+    if(flag1==0&&flag2==2&&flag3==3)
+    {
+        for(auto st : list)
+        {
+            if((st.getMath()==mark1||st.getMath()==mark2)
+                    &&(st.getUkrLanguage()==mark1||st.getUkrLanguage()==mark2)
+                    &&(st.getForeignLanguage()==mark1||st.getForeignLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+    else
+    if(flag1==1&&flag2==2&&flag3==3)
+    {
+        for(auto st : list)
+        {
+            if((st.getPhysics()==mark1||st.getPhysics()==mark2)
+                    &&(st.getUkrLanguage()==mark1||st.getUkrLanguage()==mark2)
+                    &&(st.getForeignLanguage()==mark1||st.getForeignLanguage()==mark2))
+            {
+                out.push_back(st);
+            }
+        }
+        if(out.empty())
+            throw empty_list();
+        StudentsList output(out);
+        return output;
+    }
+}
+
+StudentsList StudentsList::getFourSpecific(unsigned short mark1, unsigned short mark2)
+{
+    std::vector<Student> out;
+    for(auto st : list)
+    {
+        if((st.getMath()==mark1||st.getMath()==mark2)
+            &&(st.getPhysics()==mark1||st.getPhysics()==mark2)
+            &&(st.getUkrLanguage()==mark1||st.getUkrLanguage()==mark2)
+            &&(st.getForeignLanguage()==mark1||st.getForeignLanguage()==mark2))
+        {
+             out.push_back(st);
+        }
+    }
+    if(out.empty())
+        throw empty_list();
+    StudentsList output(out);
+    return output;
+
+}
+
+StudentsList StudentsList::ForeignPhisics5Math3()
+{
+    std::vector<Student> out;
+    for(auto st : list)
+    {
+        if(st.getMath()==3
+            &&st.getPhysics()==5
+            &&st.getForeignLanguage()==5)
+        {
+             out.push_back(st);
+        }
+    }
+    if(out.empty())
+        throw empty_list();
+    StudentsList output(out);
+    return output;
+}
+
+StudentsList StudentsList::Phisics4UkrForeign3()
+{
+    std::vector<Student> out;
+    for(auto st : list)
+    {
+        if(st.getUkrLanguage()==3
+            &&st.getPhysics()==4
+            &&st.getForeignLanguage()==3)
+        {
+             out.push_back(st);
+        }
+    }
+    if(out.empty())
+        throw empty_list();
+    StudentsList output(out);
+    return output;
+}
+
+StudentsList StudentsList::Foreign4Math5Phisics3()
+{
+    std::vector<Student> out;
+    for(auto st : list)
+    {
+        if(st.getMath()==5
+            &&st.getPhysics()==3
+            &&st.getForeignLanguage()==4)
+        {
+             out.push_back(st);
+        }
+    }
+    if(out.empty())
+        throw empty_list();
+    StudentsList output(out);
+    return output;
+}
+
 void swap(RANK& a, RANK& b)
 {
     RANK t = a;
@@ -290,11 +566,11 @@ void quickSort(RANK arr[], int first, int last)
         int begin = first, end = last;
         while (begin <= end)
         {
-            while (arr[begin].mark < m)
+            while (arr[begin].mark > m)
             {
                 begin++;
             }
-            while (arr[end].mark > m)
+            while (arr[end].mark < m)
             {
                 end--;
             }

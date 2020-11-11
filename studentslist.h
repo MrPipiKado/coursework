@@ -46,6 +46,14 @@ private:
     QString type;
 };
 
+class empty_list: public std::exception
+{
+public:
+    empty_list(){};
+    virtual const char* what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_USE_NOEXCEPT
+    { return "List is empty"; }
+};
+
 typedef struct rank
 {
     double mark;
@@ -66,6 +74,16 @@ public:
     void setList(std::vector<Student> &list);
     StudentsList getLoosers();
     void getGroupRanks(RANK(*) [4][6]);
+    StudentsList getSameNames();
+    StudentsList getSameNamesInGroup();
+    StudentsList getTwoSpecific(short flag1, short flag2,
+                                unsigned short mark1, unsigned short mark2);
+    StudentsList getThreeSpecific(short flag1, short flag2, short flag3,
+                                  unsigned short mark1, unsigned short mark2);
+    StudentsList getFourSpecific(unsigned short mark1, unsigned short mark2);
+    StudentsList ForeignPhisics5Math3();
+    StudentsList Phisics4UkrForeign3();
+    StudentsList Foreign4Math5Phisics3();
 
     void sort();
     void add(Student student);

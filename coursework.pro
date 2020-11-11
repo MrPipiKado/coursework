@@ -21,6 +21,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     outputtable.cpp \
+    specificmarks.cpp \
     student.cpp \
     studentslist.cpp
 
@@ -30,6 +31,7 @@ HEADERS += \
     groupranks.h \
     mainwindow.h \
     outputtable.h \
+    specificmarks.h \
     student.h \
     studentslist.h
 
@@ -37,7 +39,8 @@ FORMS += \
     addstudent.ui \
     groupranks.ui \
     mainwindow.ui \
-    outputtable.ui
+    outputtable.ui \
+    specificmarks.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

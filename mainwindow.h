@@ -7,6 +7,7 @@
 #include "addstudent.h"
 #include "outputtable.h"
 #include "groupranks.h"
+#include "specificmarks.h"
 
 #include <QFileDialog>
 #include <QMessageBox>
@@ -34,6 +35,18 @@ private slots:
     void on_actionAverage_marks_triggered();
 
     void on_actionGroups_top_list_triggered();
+
+    void on_actionGroup_triggered();
+
+    void on_actionEntire_list_triggered();
+
+    void on_actionTwo_specific_marks_triggered();
+
+    void on_action5_foreign_triggered();
+
+    void on_action4_physics_3_both_languages_triggered();
+
+    void on_action3_5_4_triggered();
 
 private:
     Ui::MainWindow *ui;

@@ -65,14 +65,6 @@
      <addaction name="actionGroup"/>
      <addaction name="actionEntire_list"/>
     </widget>
-    <widget class="QMenu" name="menuSpecific_marks_combination">
-     <property name="title">
-      <string>Specific marks combination</string>
-     </property>
-     <addaction name="action5_and_4_from_2_specific"/>
-     <addaction name="action4_and_3_from_3_specific"/>
-     <addaction name="action5_and_3_from_all_subjects"/>
-    </widget>
     <widget class="QMenu" name="menuSelect_students_with">
      <property name="title">
       <string>Select students with...</string>
@@ -83,8 +75,8 @@
     </widget>
     <addaction name="actionAverage_marks"/>
     <addaction name="actionGroups_top_list"/>
+    <addaction name="actionTwo_specific_marks"/>
     <addaction name="menuSame_surnames"/>
-    <addaction name="menuSpecific_marks_combination"/>
     <addaction name="menuSelect_students_with"/>
     <addaction name="separator"/>
     <addaction name="actionAdd_Student"/>
@@ -156,21 +148,6 @@
     <string>Entire list</string>
    </property>
   </action>
-  <action name="action5_and_4_from_2_specific">
-   <property name="text">
-    <string>5 and 4 from 2 specific</string>
-   </property>
-  </action>
-  <action name="action4_and_3_from_3_specific">
-   <property name="text">
-    <string>4 and 3 from 3 specific</string>
-   </property>
-  </action>
-  <action name="action5_and_3_from_all_subjects">
-   <property name="text">
-    <string>5 and 3 from all subjects</string>
-   </property>
-  </action>
   <action name="action5_foreign">
    <property name="text">
     <string>5 foreign and physics, 3 math</string>
@@ -193,6 +170,11 @@
    </property>
    <property name="text">
     <string>Add Student</string>
+   </property>
+  </action>
+  <action name="actionTwo_specific_marks">
+   <property name="text">
+    <string>Two specific marks</string>
    </property>
   </action>
  </widget>

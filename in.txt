@@ -1,5 +1,7 @@
-Adermakh     Anastasiia PZ25 5 4 5 4 
+Adermakh     Anastasiia PZ25 5 4 5 4
+Adermakh     Anastasia  PZ26 4 4 4 4  
 Andreiko     Markiian   PZ25 4 3 5 1
+Andreiko     Markian    PZ25 3 5 4 3
 Artekh       Orest      PZ25 3 4 4 2
 Bezzubiak    Tetiana    PZ25 3 3 3 3
 Birban       Yurii      PZ24 4 4 4 4 

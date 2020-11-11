@@ -99,3 +99,74 @@ void MainWindow::on_actionGroups_top_list_triggered()
     GroupRanks form(this);
     form.exec();
 }
+
+
+
+void MainWindow::on_actionGroup_triggered()
+{
+    OutputTable form(this->list.getSameNamesInGroup().getList(),this);
+    form.exec();
+}
+
+void MainWindow::on_actionEntire_list_triggered()
+{
+    OutputTable form(this->list.getSameNames().getList(),this);
+    form.exec();
+}
+
+void MainWindow::on_actionTwo_specific_marks_triggered()
+{
+    SpecificMarks form(this->list, this);
+    form.exec();
+}
+
+void MainWindow::on_action5_foreign_triggered()
+{
+    try
+    {
+        this->list.ForeignPhisics5Math3();
+    }
+    catch (std::exception & error)
+    {
+        QMessageBox::critical( this, "ERROR",
+                     "There are no such students",
+                     QMessageBox::Ok, QMessageBox::Ok);
+        return;
+    }
+    OutputTable form(this->list.ForeignPhisics5Math3().getList(),this);
+    form.exec();
+}
+
+void MainWindow::on_action4_physics_3_both_languages_triggered()
+{
+    try
+    {
+        this->list.Phisics4UkrForeign3();
+    }
+    catch (std::exception & error)
+    {
+        QMessageBox::critical( this, "ERROR",
+                     "There are no such students",
+                     QMessageBox::Ok, QMessageBox::Ok);
+        return;
+    }
+    OutputTable form(this->list.Phisics4UkrForeign3().getList(),this);
+    form.exec();
+}
+
+void MainWindow::on_action3_5_4_triggered()
+{
+    try
+    {
+        this->list.Foreign4Math5Phisics3();
+    }
+    catch (std::exception & error)
+    {
+        QMessageBox::critical( this, "ERROR",
+                     "There are no such students",
+                     QMessageBox::Ok, QMessageBox::Ok);
+        return;
+    }
+    OutputTable form(this->list.Foreign4Math5Phisics3().getList(),this);
+    form.exec();
+}
