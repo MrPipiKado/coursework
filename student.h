@@ -9,15 +9,15 @@ enum GROUPS {PZ21, PZ22, PZ23, PZ24, PZ25, PZ26};
 class Student
 {
 public:
-    Student();
+    Student(); //default constructor
     Student(QString surname,
             QString name,
             GROUPS group,
             unsigned short math,
             unsigned short physics,
             unsigned short foreign_language,
-            unsigned short ukr_language);
-    Student(const Student& copy);
+            unsigned short ukr_language); //constructor with parameters
+    Student(const Student& copy); //copy constructor
 
     void setSurname(QString surname);
     QString getSurname();
@@ -34,18 +34,18 @@ public:
     void setUkrLanguage(unsigned short ukr_language);
     unsigned short getUkrLanguage();
 
-    double getAvgMark();
-
+    double getAvgMark();  //calculate average mark
+    //read data from opened QTextStream
     friend bool operator>>(QTextStream & input, Student & student);
 
 private:
-    QString surname;
-    QString name;
-    GROUPS group;
-    unsigned short math;
-    unsigned short physics;
-    unsigned short foreign_language;
-    unsigned short ukr_language;
+    QString surname; //student's surname
+    QString name; //student's name
+    GROUPS group; //student's group
+    unsigned short math; //student's math mark
+    unsigned short physics; //student's physics mark
+    unsigned short foreign_language; //student's foreign language mark
+    unsigned short ukr_language; //student's ukr language mark
 };
 
 #endif // STUDENT_H
