@@ -32,7 +32,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+//calls addStudent form
 void MainWindow::on_actionAdd_Student_triggered()
 {
     addstudent form(this);
@@ -44,6 +44,7 @@ void MainWindow::on_actionAdd_Student_triggered()
     }
 }
 
+//reads list from file
 void MainWindow::on_action_Open_triggered()
 {
     QString file = QFileDialog::getOpenFileName(this,
@@ -69,6 +70,7 @@ void MainWindow::on_action_Open_triggered()
         ui->table<<list;
 }
 
+//seves list to file
 void MainWindow::on_action_Save_triggered()
 {
     QString filename;
@@ -81,18 +83,21 @@ void MainWindow::on_action_Save_triggered()
     }
 }
 
+//clears list
 void MainWindow::on_action_New_triggered()
 {
     ui->table->clear();
     list.clear();
 }
 
+//calls form to show students with low average mark
 void MainWindow::on_actionAverage_marks_triggered()
 {
     OutputTable form(this->list.getLoosers().getList(),this);
     form.exec();
 }
 
+//calls form to print group Ranks
 void MainWindow::on_actionGroups_top_list_triggered()
 {
     list.getGroupRanks(&group_ranks);
@@ -100,26 +105,28 @@ void MainWindow::on_actionGroups_top_list_triggered()
     form.exec();
 }
 
-
-
+//calls form to print students with same names in same group
 void MainWindow::on_actionGroup_triggered()
 {
     OutputTable form(this->list.getSameNamesInGroup().getList(),this);
     form.exec();
 }
 
+//calls form to print students with same names
 void MainWindow::on_actionEntire_list_triggered()
 {
     OutputTable form(this->list.getSameNames().getList(),this);
     form.exec();
 }
 
+//calls form to choose what marks to show
 void MainWindow::on_actionTwo_specific_marks_triggered()
 {
     SpecificMarks form(this->list, this);
     form.exec();
 }
 
+//calls form to print students with some specific marks
 void MainWindow::on_action5_foreign_triggered()
 {
     try
@@ -137,6 +144,7 @@ void MainWindow::on_action5_foreign_triggered()
     form.exec();
 }
 
+//calls form to print students with some specific marks
 void MainWindow::on_action4_physics_3_both_languages_triggered()
 {
     try
@@ -154,6 +162,7 @@ void MainWindow::on_action4_physics_3_both_languages_triggered()
     form.exec();
 }
 
+//calls form to print students with some specific marks
 void MainWindow::on_action3_5_4_triggered()
 {
     try

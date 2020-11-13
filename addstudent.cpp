@@ -15,7 +15,8 @@ addstudent::~addstudent()
 }
 
 void addstudent::on_pushButton_clicked()
-{
+{//Initialise global variable
+ //Main form uses this variable to add new student
     tmpStudent.setSurname(ui->surname->text());
     tmpStudent.setName(ui->name->text());
     if(ui->group->currentIndex() == 0)

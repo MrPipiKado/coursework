@@ -16,6 +16,7 @@ SpecificMarks::~SpecificMarks()
     delete ui;
 }
 
+//Two specific subjects' marks 5 and 4
 void SpecificMarks::on_pushButton_clicked()
 {
     if(ui->Math->isChecked()&&ui->Phisics->isChecked()
@@ -134,6 +135,7 @@ void SpecificMarks::on_pushButton_clicked()
     }
 }
 
+//Three specific subjects' marks 4 and 3
 void SpecificMarks::on_pushButton_3_clicked()
 {
     if(ui->Math->isChecked()&&ui->Phisics->isChecked()
@@ -216,6 +218,7 @@ void SpecificMarks::on_pushButton_3_clicked()
     }
 }
 
+//All marks 5 and 3
 void SpecificMarks::on_pushButton_2_clicked()
 {
     try
